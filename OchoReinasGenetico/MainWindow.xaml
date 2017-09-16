@@ -5,8 +5,126 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OchoReinasGenetico"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="8 Reinas Genetico" Height="800" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Name="StartButton" Grid.Row="1" Grid.Column="1" Content="Start!" Click="StartButton_Click"></Button>
+        <Label Grid.Row="1" Grid.Column="2" Content="Ingrese la población inicial de soluciones aquí ->" HorizontalAlignment="Right"></Label>
+        <TextBox Name="PopulationTextBox" Grid.Row="1" Grid.Column="3"></TextBox>
+        <Grid Grid.Row="3" Grid.Column="2" Name="ChessGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Background="White" Grid.Column="0" Grid.Row="0"></Button>
+            <Button Background="Black" Grid.Column="0" Grid.Row="1"></Button>
+            <Button Background="White" Grid.Column="0" Grid.Row="2"></Button>
+            <Button Background="Black" Grid.Column="0" Grid.Row="3"></Button>
+            <Button Background="White" Grid.Column="0" Grid.Row="4"></Button>
+            <Button Background="Black" Grid.Column="0" Grid.Row="5"></Button>
+            <Button Background="White" Grid.Column="0" Grid.Row="6"></Button>
+            <Button Background="Black" Grid.Column="0" Grid.Row="7"></Button>
+
+            <Button Background="Black" Grid.Column="1" Grid.Row="0"></Button>
+            <Button Background="White" Grid.Column="1" Grid.Row="1"></Button>
+            <Button Background="Black" Grid.Column="1" Grid.Row="2"></Button>
+            <Button Background="White" Grid.Column="1" Grid.Row="3"></Button>
+            <Button Background="Black" Grid.Column="1" Grid.Row="4"></Button>
+            <Button Background="White" Grid.Column="1" Grid.Row="5"></Button>
+            <Button Background="Black" Grid.Column="1" Grid.Row="6"></Button>
+            <Button Background="White" Grid.Column="1" Grid.Row="7"></Button>
+
+            <Button Background="White" Grid.Column="2" Grid.Row="0"></Button>
+            <Button Background="Black" Grid.Column="2" Grid.Row="1"></Button>
+            <Button Background="White" Grid.Column="2" Grid.Row="2"></Button>
+            <Button Background="Black" Grid.Column="2" Grid.Row="3"></Button>
+            <Button Background="White" Grid.Column="2" Grid.Row="4"></Button>
+            <Button Background="Black" Grid.Column="2" Grid.Row="5"></Button>
+            <Button Background="White" Grid.Column="2" Grid.Row="6"></Button>
+            <Button Background="Black" Grid.Column="2" Grid.Row="7"></Button>
+
+            <Button Background="Black" Grid.Column="3" Grid.Row="0"></Button>
+            <Button Background="White" Grid.Column="3" Grid.Row="1"></Button>
+            <Button Background="Black" Grid.Column="3" Grid.Row="2"></Button>
+            <Button Background="White" Grid.Column="3" Grid.Row="3"></Button>
+            <Button Background="Black" Grid.Column="3" Grid.Row="4"></Button>
+            <Button Background="White" Grid.Column="3" Grid.Row="5"></Button>
+            <Button Background="Black" Grid.Column="3" Grid.Row="6"></Button>
+            <Button Background="White" Grid.Column="3" Grid.Row="7"></Button>
+
+            <Button Background="White" Grid.Column="4" Grid.Row="0"></Button>
+            <Button Background="Black" Grid.Column="4" Grid.Row="1"></Button>
+            <Button Background="White" Grid.Column="4" Grid.Row="2"></Button>
+            <Button Background="Black" Grid.Column="4" Grid.Row="3"></Button>
+            <Button Background="White" Grid.Column="4" Grid.Row="4"></Button>
+            <Button Background="Black" Grid.Column="4" Grid.Row="5"></Button>
+            <Button Background="White" Grid.Column="4" Grid.Row="6"></Button>
+            <Button Background="Black" Grid.Column="4" Grid.Row="7"></Button>
+
+            <Button Background="Black" Grid.Column="5" Grid.Row="0"></Button>
+            <Button Background="White" Grid.Column="5" Grid.Row="1"></Button>
+            <Button Background="Black" Grid.Column="5" Grid.Row="2"></Button>
+            <Button Background="White" Grid.Column="5" Grid.Row="3"></Button>
+            <Button Background="Black" Grid.Column="5" Grid.Row="4"></Button>
+            <Button Background="White" Grid.Column="5" Grid.Row="5"></Button>
+            <Button Background="Black" Grid.Column="5" Grid.Row="6"></Button>
+            <Button Background="White" Grid.Column="5" Grid.Row="7"></Button>
+
+            <Button Background="White" Grid.Column="6" Grid.Row="0"></Button>
+            <Button Background="Black" Grid.Column="6" Grid.Row="1"></Button>
+            <Button Background="White" Grid.Column="6" Grid.Row="2"></Button>
+            <Button Background="Black" Grid.Column="6" Grid.Row="3"></Button>
+            <Button Background="White" Grid.Column="6" Grid.Row="4"></Button>
+            <Button Background="Black" Grid.Column="6" Grid.Row="5"></Button>
+            <Button Background="White" Grid.Column="6" Grid.Row="6"></Button>
+            <Button Background="Black" Grid.Column="6" Grid.Row="7"></Button>
+
+            <Button Background="Black" Grid.Column="7" Grid.Row="0"></Button>
+            <Button Background="White" Grid.Column="7" Grid.Row="1"></Button>
+            <Button Background="Black" Grid.Column="7" Grid.Row="2"></Button>
+            <Button Background="White" Grid.Column="7" Grid.Row="3"></Button>
+            <Button Background="Black" Grid.Column="7" Grid.Row="4"></Button>
+            <Button Background="White" Grid.Column="7" Grid.Row="5"></Button>
+            <Button Background="Black" Grid.Column="7" Grid.Row="6"></Button>
+            <Button Background="White" Grid.Column="7" Grid.Row="7"></Button>
+        </Grid>
+
+        <ScrollViewer Grid.Column="2" Grid.Row="5">
+            <TextBlock  Name="textConsole" Text="Aquí Aparecerán los Cromosomas..." Height="200" Background="Black" Foreground="White"></TextBlock>
+        </ScrollViewer>
         
+        <!--<Label Grid.Column="2" Grid.Row="5" Name="lblMessage" Content="Messages will be displayed here! Click on New Game!"></Label>-->
     </Grid>
 </Window>
