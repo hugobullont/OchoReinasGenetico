@@ -32,26 +32,46 @@ namespace OchoReinasGenetico
         public MainWindow()
         {
             InitializeComponent();
-            queenImage = new Image();
-            queenImage.Source = new BitmapImage(new Uri(@"D:\queen.png"));
-            generation = 1;
+            
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            this.population = int.Parse(PopulationTextBox.Text);
+            generation = 1;
+            generationString = "Generaciones : \n";
+            if(!String.IsNullOrEmpty(PopulationTextBox.Text))
+            {
+                this.population = int.Parse(PopulationTextBox.Text);
 
-            geneticAlgo = new GeneticAlgo(this.population);
+                geneticAlgo = new GeneticAlgo(this.population);
 
-            this.ejecutarAlgoritmo();
+                this.ejecutarAlgoritmo();
+            }
         }
 
         private void imprimirReina(int fila, int columna)
         {
+            queenImage = new Image();
+            queenImage.Source = new BitmapImage(new Uri(@"C:\queen.png"));
+
             Button button = (Button)ChessGrid.Children
             .Cast<UIElement>()
             .First(e => Grid.GetRow(e) == fila && Grid.GetColumn(e) == columna);
             button.Content = queenImage;
+        }
+        private void limpiarReinas()
+        {
+            for(int i=0;i<8;i++)
+            {
+                for(int j=0;j<8;j++)
+                {
+                    
+                    Button button = (Button)ChessGrid.Children
+                    .Cast<UIElement>()
+                    .First(e => Grid.GetRow(e) == i && Grid.GetColumn(e) == j);
+                    button.Content = null;
+                }
+            }
         }
 
         private void agregarCromosoma(Chromosome chromo)
@@ -67,14 +87,26 @@ namespace OchoReinasGenetico
 
         private void ejecutarAlgoritmo()
         {
-            while(geneticAlgo.getFittestChromosome().getFitness() < 0)
+            while(geneticAlgo.getFittestChromosome().getFitness() != 0)
             {
                 geneticAlgo.naturalSelection();
+                this.limpiarReinas();
                 this.buscarPosicionesReinas(geneticAlgo.getFittestChromosome());
                 this.agregarCromosoma(geneticAlgo.getFittestChromosome());
                 generation++;
             }
             this.done();
+
+            //if (geneticAlgo.getFittestChromosome().getFitness() != 0)
+            //{
+            //    geneticAlgo.naturalSelection();
+            //    this.limpiarReinas();
+            //    this.buscarPosicionesReinas(geneticAlgo.getFittestChromosome());
+            //    this.agregarCromosoma(geneticAlgo.getFittestChromosome());
+            //    generation++;
+            //}
+            //else { this.done(); }
+
         }
 
         private void done()
@@ -89,6 +121,11 @@ namespace OchoReinasGenetico
             {
                 this.imprimirReina(chromo.getGenes(i), i);
             }
+        }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.ejecutarAlgoritmo();
         }
     }
 }

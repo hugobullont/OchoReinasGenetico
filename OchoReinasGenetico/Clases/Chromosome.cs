@@ -54,7 +54,13 @@ namespace OchoReinasGenetico.Clases
 
         public string displayChromosome()
         {
-            return this.genes.ToString();
+            string g = "[ ";
+            for(int i=0;i<8;i++)
+            {
+                g = g + getGenes(i).ToString() + " ";
+            }
+            g = g + "]";
+            return g;
         }
 
         private int getVerticalHorizontalConflicts(int index)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OchoReinasGenetico"
         mc:Ignorable="d"
-        Title="8 Reinas Genetico" Height="800" Width="800">
+        Title="8 Reinas Genetico" MaxHeight="700" Height="700" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"></RowDefinition>
@@ -25,6 +25,7 @@
             <ColumnDefinition Width="50"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Button Name="StartButton" Grid.Row="1" Grid.Column="1" Content="Start!" Click="StartButton_Click"></Button>
+        <Button Name="NextButton" Grid.Row="2" Grid.Column="1" Content="NextGen" Click="NextButton_Click"></Button>
         <Label Grid.Row="1" Grid.Column="2" Content="Ingrese la población inicial de soluciones aquí ->" HorizontalAlignment="Right"></Label>
         <TextBox Name="PopulationTextBox" Grid.Row="1" Grid.Column="3"></TextBox>
         <Grid Grid.Row="3" Grid.Column="2" Name="ChessGrid">
@@ -121,8 +122,8 @@
             <Button Background="White" Grid.Column="7" Grid.Row="7"></Button>
         </Grid>
 
-        <ScrollViewer Grid.Column="2" Grid.Row="5">
-            <TextBlock  Name="textConsole" Text="Aquí Aparecerán los Cromosomas..." Height="200" Background="Black" Foreground="White"></TextBlock>
+        <ScrollViewer Grid.Column="2" Grid.Row="5"  Height="100" VerticalScrollBarVisibility="Visible">
+            <TextBlock Name="textConsole" Text="Aquí Aparecerán los Cromosomas..." Background="Black" Foreground="White"></TextBlock>
         </ScrollViewer>
         
         <!--<Label Grid.Column="2" Grid.Row="5" Name="lblMessage" Content="Messages will be displayed here! Click on New Game!"></Label>-->
